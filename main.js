@@ -96,13 +96,6 @@ deliveryChoice.addEventListener('change', () => {
 })
 
 
-
-function resetCart() {
-    cart.length = 0;
-}
-
-
-
 // Update the price banner whenever a change is made in the customization.
 const displayPrice = document.querySelectorAll('#totalPrice')
 function updatePrice() {
@@ -199,10 +192,6 @@ function isInCart(pancake, special = false) {
 }
 
 
-function checkIfInCart(pancake, special) {
-
-}
-
 //If pancake is already in cart, add to it. Else, push new pancake.
 function addToCart(pancake, special = false) {
     const cartNum = isInCart(pancake, special)
@@ -295,12 +284,12 @@ function listenAddRemove() {
 
 
 //Displaying the total cost of all items in the cart
-const totalCostDisplay = document.querySelector('#summaryTotalCost')
+const summaryCostDisplay = document.querySelector('#summaryTotalCost')
 const deliverySpan = document.querySelector('#deliveryFee')
 function summaryTotalCost() {
     let summaryCost = 0;
     cart.forEach((item) => summaryCost += item.getTotalCost())
-    totalCostDisplay.textContent = `$${summaryCost + deliveryCost}`
+    summaryCostDisplay.textContent = `$${summaryCost + deliveryCost}`
     deliveryCost === 5 ? deliverySpan.textContent = `, including a $5 delivery fee` : deliverySpan.textContent = ''
 }
 
@@ -317,10 +306,9 @@ function placeOrder() {
             throw new Error(`Order is missing a name`)
         } 
 
-        orderList.push(cart);
-        resetCart()
-
+        orderList.push(JSON.stringify(cart));
         togglePage(confirmation)
+        resetCart()
 
     } catch (error) {
         showMessage(`Error: ` + error.message)
@@ -334,9 +322,6 @@ function updateCartCount() {
 }
 
 
-
-
-
 function resetPancake() {
     [basePrice, toppingsPrice, deliveryCost] = [5, 0, 0]
     pancakeType.value = 5;
@@ -348,4 +333,12 @@ function resetPancake() {
     customPancake.toppings = []
     customPancake.extras = []
     updatePrice()
+}
+
+function resetCart() {
+    totalPancakeCount = 0;
+    orderDisplay.innerHTML = '';
+    updateCartCount();
+    cart.length = 0;
+    summaryTotalCost();
 }
