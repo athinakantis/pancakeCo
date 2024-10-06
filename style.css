@@ -39,12 +39,6 @@ header {
   border-bottom: 1px solid var(--secondaryColor);
 }
 
-a:has(.logo) {
-  text-decoration: none;
-  color: var(--secondaryColor)
-}
-
-
 
 .logo {
   display: flex;
@@ -214,7 +208,7 @@ h3 {
 
 /* Order Page Styling */
 .order {
-  margin: 40px auto;
+  margin: 3rem auto 2rem;
   display: none;
 }
 
@@ -284,7 +278,7 @@ h3 {
   margin: 0 0 1rem;
 }
 
-:where(.customize, .summary, .about, .confirmation) > h2 {
+:where(.customize, .summary, .about, .confirmation) h2 {
   margin: 0 0 1rem;
 }
 
@@ -428,6 +422,8 @@ footer h3 {
   text-decoration: underline;
 }
 
+
+
 /* Confirmation Section */
 .confirmation {
   display: none;
@@ -456,12 +452,6 @@ footer h3 {
 
 /* About Styling */
 .about {
-  margin: 40px auto;
-  padding: 2rem;
-  background-color: var(--primaryColor);
-  border: 1px solid var(--secondaryColor);
-  width: 600px;
-  line-height: 1.5;
   display: none;
 }
 
@@ -469,6 +459,14 @@ footer h3 {
   display: block;
 }
 
+.about > div {
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: var(--primaryColor);
+  border: 1px solid var(--secondaryColor);
+  width: 600px;
+  line-height: 1.5;
+}
 
 .about #kindRegards {
   text-align: end;
