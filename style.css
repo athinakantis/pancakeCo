@@ -18,7 +18,7 @@
 
 body {
   color: var(--secondaryColor);
-  font-family: var(--font);
+  font-family: var(--font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,7 +52,7 @@ a:has(.logo) {
 }
 
 header h1 {
-  font-family: 'Rock Salt', Arial;
+  font-family: 'Rock Salt', Verdana;
   font-size: 1rem;
   padding-left: 10px;
 }
@@ -338,6 +338,7 @@ input, select {
 }
 
 .order nav button.active {
+  font-weight: bold;
   text-decoration: underline;
   z-index: 3;
 }
@@ -444,6 +445,10 @@ footer h3 {
 .confirmation > div {
   max-width: 600px;
   margin: auto;
+}
+
+.confirmation.active {
+  display: block;
 }
 
 
