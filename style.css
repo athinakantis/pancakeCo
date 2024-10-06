@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   position: relative;
   line-height: 1.2;
-  background-image: url('/images/BakingPattern.png');
+  background-image: url('images/BakingPattern.png');
   background-repeat: repeat;
 } 
 
