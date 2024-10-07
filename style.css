@@ -18,7 +18,7 @@
 
 body {
   color: var(--secondaryColor);
-  font-family: var(--font);
+  font-family: var(--font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -39,12 +39,6 @@ header {
   border-bottom: 1px solid var(--secondaryColor);
 }
 
-a:has(.logo) {
-  text-decoration: none;
-  color: var(--secondaryColor)
-}
-
-
 
 .logo {
   display: flex;
@@ -52,7 +46,7 @@ a:has(.logo) {
 }
 
 header h1 {
-  font-family: 'Rock Salt', Arial;
+  font-family: 'Rock Salt', Verdana;
   font-size: 1rem;
   padding-left: 10px;
 }
@@ -214,7 +208,7 @@ h3 {
 
 /* Order Page Styling */
 .order {
-  margin: 40px auto;
+  margin: 3rem auto 2rem;
   display: none;
 }
 
@@ -284,7 +278,7 @@ h3 {
   margin: 0 0 1rem;
 }
 
-:where(.customize, .summary, .about, .confirmation) > h2 {
+:where(.customize, .summary, .about, .confirmation) h2 {
   margin: 0 0 1rem;
 }
 
@@ -338,6 +332,7 @@ input, select {
 }
 
 .order nav button.active {
+  font-weight: bold;
   text-decoration: underline;
   z-index: 3;
 }
@@ -427,6 +422,8 @@ footer h3 {
   text-decoration: underline;
 }
 
+
+
 /* Confirmation Section */
 .confirmation {
   display: none;
@@ -446,17 +443,15 @@ footer h3 {
   margin: auto;
 }
 
+.confirmation.active {
+  display: block;
+}
+
 
 
 
 /* About Styling */
 .about {
-  margin: 40px auto;
-  padding: 2rem;
-  background-color: var(--primaryColor);
-  border: 1px solid var(--secondaryColor);
-  width: 600px;
-  line-height: 1.5;
   display: none;
 }
 
@@ -464,6 +459,14 @@ footer h3 {
   display: block;
 }
 
+.about > div {
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: var(--primaryColor);
+  border: 1px solid var(--secondaryColor);
+  width: 600px;
+  line-height: 1.5;
+}
 
 .about #kindRegards {
   text-align: end;

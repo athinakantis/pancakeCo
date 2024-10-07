@@ -96,34 +96,23 @@ deliveryChoice.addEventListener('change', () => {
 })
 
 
-
-function resetCart() {
-    cart.length = 0;
-}
-
-
-
-
+// Update the price banner whenever a change is made in the customization.
 const displayPrice = document.querySelectorAll('#totalPrice')
 function updatePrice() {
     for (let element of displayPrice) {
         element.textContent = `$${basePrice + toppingsPrice}`
-        animate(element, 'bounce')
+        element.classList.add('bounce')
+        setTimeout(() => element.classList.remove('bounce'), 400)
     }
 }
 
-function animate(el, animation) {
-    el.classList.add(animation)
-    setTimeout(() => el.classList.remove(animation), 400)
-}
 
-
+// If an error occurs, a message is displayed to the user.
 function showMessage(msg) {
     reply.textContent = msg
     if (currentTimeout) {clearTimeout(currentTimeout)}
     currentTimeout = setTimeout(() => reply.textContent = '', 4000)
 }
-
 
 
 
@@ -135,32 +124,35 @@ const [home, order, confirmation, about] = document.querySelectorAll('.home, .or
 const redirectOrderBtns = document.querySelectorAll('.redirectOrderBtn')
 
 
+
+// Keep track of current active sections
 let active = specialsBtn
 let currentPage = home;
 let currentOrderPage = specialsPage
 
-function toggleOrderPage(el, e) {
+function toggleOrderPage(section, btn) {
     active.classList.toggle('active');
-    e.target.classList.toggle('active');
     currentOrderPage.classList.toggle('active');
-    el.classList.toggle('active');
 
-    active = e.target;
-    currentOrderPage = el;
+    section.classList.toggle('active')
+    btn.classList.toggle('active')
+
+    active = section
+    currentOrderPage = btn;
 }
 
 
-specialsBtn.addEventListener('click', (e) => toggleOrderPage(specialsPage, e));
-customBtn.addEventListener('click', (e) => toggleOrderPage(customPage, e));
-viewCartBtn.addEventListener('click', (e) => {
+specialsBtn.addEventListener('click', () => toggleOrderPage(specialsPage, specialsBtn));
+customBtn.addEventListener('click', () => toggleOrderPage(customPage, customBtn));
+viewCartBtn.addEventListener('click', () => {
     viewCart()
-    toggleOrderPage(summary, e)
+    toggleOrderPage(summary, viewCartBtn)
 });
 
 
-homeBtn.addEventListener('click', (e) => togglePage(home));
+homeBtn.addEventListener('click', () => togglePage(home));
 redirectOrderBtns.forEach((button) => button.addEventListener('click', () => togglePage(order)))
-redirectAboutBtn.addEventListener('click', () => togglePage(about, ))
+redirectAboutBtn.addEventListener('click', () => togglePage(about))
 
 
 function togglePage(el) {
@@ -198,6 +190,7 @@ function isInCart(pancake, special = false) {
     }
     return cart.findIndex((item) => JSON.stringify(item.pancake) === JSON.stringify(pancake))
 }
+
 
 //If pancake is already in cart, add to it. Else, push new pancake.
 function addToCart(pancake, special = false) {
@@ -291,12 +284,12 @@ function listenAddRemove() {
 
 
 //Displaying the total cost of all items in the cart
-const totalCostDisplay = document.querySelector('#summaryTotalCost')
+const summaryCostDisplay = document.querySelector('#summaryTotalCost')
 const deliverySpan = document.querySelector('#deliveryFee')
 function summaryTotalCost() {
     let summaryCost = 0;
     cart.forEach((item) => summaryCost += item.getTotalCost())
-    totalCostDisplay.textContent = `$${summaryCost + deliveryCost}`
+    summaryCostDisplay.textContent = `$${summaryCost + deliveryCost}`
     deliveryCost === 5 ? deliverySpan.textContent = `, including a $5 delivery fee` : deliverySpan.textContent = ''
 }
 
@@ -313,14 +306,9 @@ function placeOrder() {
             throw new Error(`Order is missing a name`)
         } 
 
-        if (cart.length < 1) {
-            throw new Error(`Cannot checkout empty cart`)
-        }
-
-        orderList.push(cart);
-        resetCart()
-
+        orderList.push(JSON.stringify(cart));
         togglePage(confirmation)
+        resetCart()
 
     } catch (error) {
         showMessage(`Error: ` + error.message)
@@ -334,9 +322,6 @@ function updateCartCount() {
 }
 
 
-
-
-
 function resetPancake() {
     [basePrice, toppingsPrice, deliveryCost] = [5, 0, 0]
     pancakeType.value = 5;
@@ -348,4 +333,12 @@ function resetPancake() {
     customPancake.toppings = []
     customPancake.extras = []
     updatePrice()
+}
+
+function resetCart() {
+    totalPancakeCount = 0;
+    orderDisplay.innerHTML = '';
+    updateCartCount();
+    cart.length = 0;
+    summaryTotalCost();
 }
