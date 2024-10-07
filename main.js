@@ -313,6 +313,10 @@ function placeOrder() {
             throw new Error(`Order is missing a name`)
         } 
 
+        if (cart.length < 1) {
+            throw new Error(`Cannot checkout empty cart`)
+        }
+
         orderList.push(cart);
         resetCart()
 
