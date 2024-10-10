@@ -42,10 +42,8 @@ header {
 .logo {
   display: flex;
   align-items: center;
-}
-
-header h1 {
   font-family: 'Rock Salt', Verdana;
+  gap: 5px;
   font-size: 1rem;
   padding-left: 10px;
 }
@@ -106,8 +104,14 @@ header button:active {
   display: block;
 }
 
-section {
+/* section {
   min-height: 70vh;
+} */
+
+/* MAIN */
+
+main {
+  min-height: calc(100vh - 290px);
 }
 
 /* 
@@ -253,7 +257,12 @@ h3 {
 }
 
 .customization-section {
-  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.toppings > div,
+.extras > div {
+  margin: 0.5rem 0;
 }
 
 :where(.customization-section, .summary, .about) :where(p) {
@@ -287,7 +296,7 @@ select {
 }
 
 .price-banner {
-  font-size: 3rem;
+  font-size: 2rem;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -402,10 +411,7 @@ footer h3 {
 /* Confirmation Section */
 .confirmation {
   display: none;
-  background-color: var(--primaryColor);
-  padding: 2rem;
   margin: 40px auto;
-  border: 1px solid var(--secondaryColor);
 }
 
 .confirmation > div > h2 {
@@ -414,6 +420,9 @@ footer h3 {
 }
 
 .confirmation > div {
+  background-color: var(--primaryColor);
+  padding: 2rem;
+  border: 1px solid var(--secondaryColor);
   max-width: 600px;
   margin: auto;
 }
@@ -551,5 +560,9 @@ footer h3 {
 
   .special-card :where(h3, p) {
     margin: 0 0 1.5rem;
+  }
+
+  footer > div {
+    font-size: 0.9rem;
   }
 }

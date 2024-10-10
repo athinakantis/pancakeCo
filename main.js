@@ -99,7 +99,7 @@ deliveryChoice.addEventListener('change', () => {
 
 
 // Update the price banner whenever a change is made in the customization.
-const displayPrice = document.querySelectorAll('#totalPrice');
+const displayPrice = document.querySelectorAll('.totalPrice');
 function updatePrice() {
     for (let element of displayPrice) {
         element.textContent = `$${basePrice + toppingsPrice}`;
