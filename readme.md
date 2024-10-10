@@ -4,5 +4,5 @@ An example and learning project of what a local pancake shop's website might loo
 
 ## Credits
 
-Cherry Bomb Photo: [[Micheile Henderson](https://unsplash.com/@micheile)]
+Cherry Bomb Photo: [Micheile Henderson](https://unsplash.com/@micheile)<br>
 Background Pattern: My own, Adobe Illustrator
