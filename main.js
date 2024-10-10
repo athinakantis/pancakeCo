@@ -1,6 +1,6 @@
 "use strict";
 
-//Initial values for cart and pancake.
+//Initial values for cart and Custom pancake
 let totalPancakeCount = 0;
 const orderList = [];
 const cart = [];
@@ -8,6 +8,8 @@ let [basePrice, toppingsPrice, deliveryCost] = [5, 0, 0];
 let customPancake = { pancakeBase: 'Classic', toppings: [], extras: [] };
 let currentTimeout;
 
+
+//Current 'Specials'
 const specials = [{ pancake: 'Cherry Bomb', cost: 12 }, { pancake: 'Pumpkin Spice Cinnamon Roll', cost: 11, special: true }, { pancake: 'Banana Swirl', cost: 10, special: true }];
 
 
@@ -126,18 +128,18 @@ const redirectOrderBtns = document.querySelectorAll('.redirectOrderBtn');
 
 
 // Keep track of current active sections
-let active = specialsBtn;
+let activeBtn = specialsBtn;
 let currentPage = home;
 let currentOrderPage = specialsPage;
 
 function toggleOrderPage(section, btn) {
-    active.classList.toggle('active');
+    activeBtn.classList.toggle('active');
     currentOrderPage.classList.toggle('active');
 
     section.classList.toggle('active');
     btn.classList.toggle('active');
 
-    active = section;
+    activeBtn = section;
     currentOrderPage = btn;
 }
 
@@ -295,7 +297,7 @@ function summaryTotalCost() {
 }
 
 
-//Placing the order if customer has entered a name
+//Placing the order if customer has entered a name and cart is not empty
 const placeOrderBtn = document.querySelector('#placeOrder');
 placeOrderBtn.addEventListener('click', placeOrder);
 
@@ -327,6 +329,7 @@ function updateCartCount() {
 }
 
 
+// After a pancake is added to the cart, reset the form
 function resetPancake() {
     [basePrice, toppingsPrice, deliveryCost] = [5, 0, 0];
     pancakeType.value = 5;
@@ -340,6 +343,7 @@ function resetPancake() {
     updatePrice();
 }
 
+// After an order is placed, reset the cart
 function resetCart() {
     deliverySpan.textContent = '';
     document.querySelector('#eatIn').checked = true;
