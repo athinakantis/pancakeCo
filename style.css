@@ -13,6 +13,7 @@
   --accentColor: #d89459;
   --logoFont: 'Rock Salt';
   --font: 'Ubuntu Mono';
+  --accentFont: monospace;
 }
 
 body {
@@ -104,12 +105,7 @@ header button:active {
   display: block;
 }
 
-/* section {
-  min-height: 70vh;
-} */
-
 /* MAIN */
-
 main {
   min-height: calc(100vh - 290px);
 }
@@ -127,6 +123,7 @@ PROMO SECTION
 }
 
 .quote {
+  font-family: var(--accentFont);
   padding: 2rem;
   max-width: 700px;
   height: max-content;
@@ -223,6 +220,7 @@ h3 {
   border-right: 1px solid var(--secondaryColor);
   font-size: 1.2rem;
   z-index: 1;
+  padding: 0.5rem 1rem;
 }
 
 .order > nav > div {
