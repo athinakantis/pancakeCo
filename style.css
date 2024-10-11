@@ -77,9 +77,9 @@ header button {
 button {
   background-color: var(--accentColor);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: inherit;
-  padding: 1rem 2rem;
+  padding: 0.5rem;
   border: none;
 }
 
@@ -234,8 +234,8 @@ h3 {
   background-color: red;
   color: white;
   z-index: 3;
-  top: -5px;
-  right: -5px;
+  top: -10px;
+  right: -12px;
   padding: 5px;
   border-radius: 50%;
   width: 25px;
@@ -249,7 +249,7 @@ h3 {
 .customization-container {
   width: 600px;
   background-color: var(--primaryColor);
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem;
   border: 1px solid var(--secondaryColor);
   margin: auto;
   position: relative;
@@ -281,6 +281,7 @@ select {
 
 .order button:not(.order nav button) {
   padding: 0.5rem 1rem;
+  margin: 1rem 0 0;
 }
 
 .customerDetails {
@@ -360,7 +361,7 @@ select {
 .orderItem {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   font-size: 1.2rem;
   margin: 1rem 0;
 }
