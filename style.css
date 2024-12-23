@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* General Styling */
 * {
     margin: 0;
@@ -20,6 +22,14 @@ body {
     font-family: var(--font), system-ui, -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    line-height: 1.2;
+    background-image: url('images/BakingPattern.png');
+    background-repeat: repeat;
+    color: var(--secondaryColor);
+    font-family: var(--font), sans-serif;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -104,12 +114,7 @@ header button:active {
     display: block;
 }
 
-/* section {
-  min-height: 70vh;
-} */
-
 /* MAIN */
-
 main {
     min-height: calc(100vh - 290px);
 }
@@ -127,6 +132,12 @@ PROMO SECTION
 }
 
 .quote {
+    padding: 2rem;
+    max-width: 700px;
+    height: max-content;
+    background-color: var(--primaryColor);
+    box-shadow: 7px 7px 0 var(--primaryShadow);
+    font-family: var(--accentFont);
     padding: 2rem;
     max-width: 700px;
     height: max-content;
@@ -223,6 +234,16 @@ h3 {
     border-right: 1px solid var(--secondaryColor);
     font-size: 1.2rem;
     z-index: 1;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    position: relative;
+    top: 1px;
+    border-left: 1px solid var(--secondaryColor);
+    border-top: 1px solid var(--secondaryColor);
+    border-right: 1px solid var(--secondaryColor);
+    font-size: 1.2rem;
+    z-index: 1;
+    padding: 0.5rem 1rem;
 }
 
 .order > nav > div {
