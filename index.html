@@ -2,9 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Pancake Co™ - Your local pancake parlor</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
     <link
       rel="shortcut icon"
       href="images/icons/pancakeCo_logo.png"
@@ -14,8 +20,14 @@
 
   <body>
     <header>
-      <button id="homeBtn" class="logo">
-        <img src="images/icons/pancakeCo_logo.png" alt="pancake Co logo" />
+      <button
+        id="homeBtn"
+        class="logo"
+      >
+        <img
+          src="images/icons/pancakeCo_logo.png"
+          alt="pancake Co logo"
+        />
         Pancake Co&trade;
       </button>
 
@@ -75,10 +87,26 @@
 
       <section class="order">
         <nav>
-          <button type="button" class="active" id="specials">Specials</button>
-          <button type="button" id="custom">I wanna make my own!</button>
+          <button
+            type="button"
+            class="active"
+            id="specials"
+          >
+            Specials
+          </button>
+          <button
+            type="button"
+            id="custom"
+          >
+            I wanna make my own!
+          </button>
           <div>
-            <button type="button" id="viewCart">View Cart</button>
+            <button
+              type="button"
+              id="viewCart"
+            >
+              View Cart
+            </button>
             <p id="cartCount"></p>
           </div>
         </nav>
@@ -91,7 +119,11 @@
                 It’s cher-ished for a reason: This Cherry/Mascarpone/White
                 chocolate dream is everything you need! Limited Edition.
               </p>
-              <button class="addSpecial" name="Cherry Bomb" value="1">
+              <button
+                class="addSpecial"
+                name="Cherry Bomb"
+                value="1"
+              >
                 Add to Cart
               </button>
             </div>
@@ -116,7 +148,11 @@
                 chocolatey sauce, bananas and meringue, no wonder it’s one of
                 our best sellers!
               </p>
-              <button class="addSpecial" name="Banana Swirl" value="3">
+              <button
+                class="addSpecial"
+                name="Banana Swirl"
+                value="3"
+              >
                 Add to Cart
               </button>
             </div>
@@ -130,16 +166,36 @@
             <div class="customization-section">
               <label for="type">Choose your pancake type:</label>
               <select id="type">
-                <option value="5" id="Classic">Classic - $5</option>
-                <option value="6" id="Chocolate">Chocolate - $6</option>
-                <option value="7" id="Blueberry">Blueberry - $7</option>
+                <option
+                  value="5"
+                  id="Classic"
+                >
+                  Classic - $5
+                </option>
+                <option
+                  value="6"
+                  id="Chocolate"
+                >
+                  Chocolate - $6
+                </option>
+                <option
+                  value="7"
+                  id="Blueberry"
+                >
+                  Blueberry - $7
+                </option>
               </select>
             </div>
             <div class="customization-section-container">
               <div class="customization-section toppings">
                 <p>Select your toppings ($1 each):</p>
                 <div>
-                  <input type="checkbox" name="topping" id="Nuts" value="1" />
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    id="Nuts"
+                    value="1"
+                  />
                   <label for="Nuts">Nuts</label>
                 </div>
                 <div>
@@ -152,7 +208,12 @@
                   <label for="Bananas">Bananas</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="topping" id="Syrup" value="1" />
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    id="Syrup"
+                    value="1"
+                  />
                   <label for="Syrup">Syrup</label>
                 </div>
               </div>
@@ -179,7 +240,12 @@
                 <label for="Ice Cream">Ice cream - $3</label>
               </div>
             </div>
-            <button type="button" id="addCustom">Add to Cart</button>
+            <button
+              type="button"
+              id="addCustom"
+            >
+              Add to Cart
+            </button>
           </div>
 
           <div class="summary">
@@ -192,24 +258,46 @@
             <div class="customerDetails">
               <div>
                 <label for="orderName">Name:</label>
-                <input type="text" id="orderName" required />
+                <input
+                  type="text"
+                  id="orderName"
+                  required
+                />
               </div>
               <p>Delivery option:</p>
               <div>
-                <input type="radio" name="delivery" id="eatIn" checked />
+                <input
+                  type="radio"
+                  name="delivery"
+                  id="eatIn"
+                  checked
+                />
                 <label for="eatIn">Eat in</label>
               </div>
               <div>
-                <input type="radio" name="delivery" id="pickUp" />
+                <input
+                  type="radio"
+                  name="delivery"
+                  id="pickUp"
+                />
                 <label for="pickUp">Pick up</label>
               </div>
               <div>
-                <input type="radio" name="delivery" id="delivery" />
+                <input
+                  type="radio"
+                  name="delivery"
+                  id="delivery"
+                />
                 <label for="delivery">Delivery - $5</label>
               </div>
             </div>
             <p id="reply"></p>
-            <button type="submit" id="placeOrder">Place order</button>
+            <button
+              type="submit"
+              id="placeOrder"
+            >
+              Place order
+            </button>
           </div>
         </div>
       </section>
@@ -255,7 +343,7 @@
         <p>pancakeCo@yahoo.com</p>
       </div>
 
-      <p>Copyright &copy 2024 Pancake Co &trade;</p>
+      <p>Copyright &copy <span id="copyright"></span> Pancake Co &trade;</p>
     </footer>
 
     <script src="main.js"></script>
