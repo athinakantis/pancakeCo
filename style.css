@@ -604,4 +604,8 @@ footer h3 {
         gap: 0.5rem;
         height: 5rem;
     }
+
+    header .logo {
+        padding-left: 0;
+    }
 }
