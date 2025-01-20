@@ -233,9 +233,8 @@ function displayOrder() {
                     item.pancake.extras,
                 ];
 
-                typeOfPancake = `${base} pancake, Toppings: ${
-                    toppings.length > 0 ? toppings.join(', ') : 'None'
-                }, Extras: ${extras.length > 0 ? extras.join(', ') : 'None'}`;
+                typeOfPancake = `${base} pancake, Toppings: ${toppings.length > 0 ? toppings.join(', ') : 'None'
+                    }, Extras: ${extras.length > 0 ? extras.join(', ') : 'None'}`;
             } else {
                 typeOfPancake = `${item.name}`;
             }
@@ -300,8 +299,6 @@ function summaryTotalCost() {
     deliveryCost === 5
         ? (deliverySpan.textContent = `, including a $5 delivery fee`)
         : (deliverySpan.textContent = '');
-
-    console.log(deliveryCost);
 }
 
 //Placing the order if customer has entered a name and cart is not empty
